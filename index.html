@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>大阪之旅 - 六天完美行程</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="nav-content">
+            <h1>大阪之旅</h1>
+            <ul class="nav-links">
+                <li><a href="#home">首页</a></li>
+                <li><a href="#itinerary">行程</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- 首页区域 -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>大阪之旅 - 六天完美行程</h1>
+            <p>探索日本关西的魅力，感受大阪的独特文化</p>
+            <a href="#itinerary" class="cta-button">开始探索</a>
+        </div>
+    </section>
+
+    <!-- 行程区域 -->
+    <section id="itinerary" class="itinerary">
+        <!-- Day 1 -->
+        <div class="day-card" id="day1">
+            <h2>Day 1: 抵达大阪</h2>
+            <div class="image-grid">
+                <img src="images/day1-1.jpg" alt="机场照片" class="trip-image">
+                <img src="images/day1-2.jpg" alt="酒店照片" class="trip-image">
+                <img src="images/day1-3.jpg" alt="房间照片" class="trip-image">
+            </div>
+            <div class="trip-content">
+                <h3>行程安排</h3>
+                <ul>
+                    <li>抵达关西国际机场</li>
+                    <li>办理入境手续</li>
+                    <li>乘坐机场快线前往市区</li>
+                    <li>入住酒店</li>
+                </ul>
+                <h3>实用信息</h3>
+                <p>机场到酒店交通：乘坐南海电铁或关空快速</p>
+                <p>酒店周边设施：便利店、餐厅、地铁站</p>
+            </div>
+            <div class="comments-section">
+                <h3>行程评论</h3>
+                <div class="comment-form">
+                    <textarea placeholder="写下你的评论..." id="comment-input-1"></textarea>
+                    <button onclick="addComment(1)">发表评论</button>
+                </div>
+                <div class="comments-list" id="comments-1"></div>
+            </div>
+        </div>
+
+        <!-- Day 2 -->
+        <div class="day-card" id="day2">
+            <h2>Day 2: 环球影城冒险</h2>
+            <div class="image-grid">
+                <img src="images/day2-1.jpg" alt="USJ标志" class="trip-image">
+                <img src="images/day2-2.jpg" alt="哈利波特园区" class="trip-image">
+                <img src="images/day2-3.jpg" alt="小黄人园区" class="trip-image">
+            </div>
+            <div class="trip-content">
+                <h3>行程安排</h3>
+                <ul>
+                    <li>早上8点前到达USJ</li>
+                    <li>哈利波特魔法世界</li>
+                    <li>小黄人乐园</li>
+                    <li>蜘蛛侠惊魂历险记</li>
+                </ul>
+                <h3>实用信息</h3>
+                <p>门票：建议提前网上购买</p>
+                <p>快速通行证：建议购买4项快速通行证</p>
+            </div>
+            <div class="comments-section">
+                <h3>行程评论</h3>
+                <div class="comment-form">
+                    <textarea placeholder="写下你的评论..." id="comment-input-2"></textarea>
+                    <button onclick="addComment(2)">发表评论</button>
+                </div>
+                <div class="comments-list" id="comments-2"></div>
+            </div>
+        </div>
+
+        <!-- Day 3 -->
+        <div class="day-card" id="day3">
+            <h2>Day 3: 海游馆探索</h2>
+            <div class="image-grid">
+                <img src="images/day3-1.jpg" alt="海游馆外观" class="trip-image">
+                <img src="images/day3-2.jpg" alt="鲸鲨" class="trip-image">
+                <img src="images/day3-3.jpg" alt="企鹅" class="trip-image">
+            </div>
+            <div class="trip-content">
+                <h3>行程安排</h3>
+                <ul>
+                    <li>上午10点到达大阪海游馆</li>
+                    <li>参观鲸鲨水族箱</li>
+                    <li>观看企鹅表演</li>
+                    <li>体验互动区域</li>
+                    <li>傍晚乘坐天保山大摩天轮</li>
+                </ul>
+                <h3>实用信息</h3>
+                <p>门票：成人2300日元，儿童1200日元</p>
+                <p>开放时间：10:00-20:00（最后入场19:00）</p>
+                <p>交通：乘坐大阪地铁中央线到大阪港站</p>
+            </div>
+            <div class="comments-section">
+                <h3>行程评论</h3>
+                <div class="comment-form">
+                    <textarea placeholder="写下你的评论..." id="comment-input-3"></textarea>
+                    <button onclick="addComment(3)">发表评论</button>
+                </div>
+                <div class="comments-list" id="comments-3"></div>
+            </div>
+        </div>
+
+        <!-- Day 4 -->
+        <div class="day-card" id="day4">
+            <h2>Day 4: 京都文化之旅</h2>
+            <div class="image-grid">
+                <img src="images/day4-1.jpg" alt="金阁寺" class="trip-image">
+                <img src="images/day4-2.jpg" alt="清水寺" class="trip-image">
+                <img src="images/day4-3.jpg" alt="祗园" class="trip-image">
+            </div>
+            <div class="trip-content">
+                <h3>行程安排</h3>
+                <ul>
+                    <li>早上乘坐JR前往京都</li>
+                    <li>参观金阁寺（世界文化遗产）</li>
+                    <li>游览清水寺和二年坂三年坂</li>
+                    <li>傍晚漫步祗园地区</li>
+                    <li>体验传统茶道</li>
+                </ul>
+                <h3>实用信息</h3>
+                <p>交通：使用JR关西广域周游券</p>
+                <p>金阁寺门票：400日元</p>
+                <p>清水寺门票：400日元</p>
+                <p>建议穿着舒适的步行鞋</p>
+            </div>
+            <div class="comments-section">
+                <h3>行程评论</h3>
+                <div class="comment-form">
+                    <textarea placeholder="写下你的评论..." id="comment-input-4"></textarea>
+                    <button onclick="addComment(4)">发表评论</button>
+                </div>
+                <div class="comments-list" id="comments-4"></div>
+            </div>
+        </div>
+
+        <!-- Day 5 -->
+        <div class="day-card" id="day5">
+            <h2>Day 5: 宇治奈良一日游</h2>
+            <div class="image-grid">
+                <img src="images/day5-1.jpg" alt="宇治平等院" class="trip-image">
+                <img src="images/day5-2.jpg" alt="奈良公园" class="trip-image">
+                <img src="images/day5-3.jpg" alt="东大寺" class="trip-image">
+            </div>
+            <div class="trip-content">
+                <h3>行程安排</h3>
+                <ul>
+                    <li>上午游览宇治平等院</li>
+                    <li>品尝宇治抹茶</li>
+                    <li>下午前往奈良公园</li>
+                    <li>参观东大寺</li>
+                    <li>与奈良小鹿互动</li>
+                </ul>
+                <h3>实用信息</h3>
+                <p>交通：使用JR关西广域周游券</p>
+                <p>平等院门票：600日元</p>
+                <p>东大寺门票：600日元</p>
+                <p>奈良公园免费开放</p>
+            </div>
+            <div class="comments-section">
+                <h3>行程评论</h3>
+                <div class="comment-form">
+                    <textarea placeholder="写下你的评论..." id="comment-input-5"></textarea>
+                    <button onclick="addComment(5)">发表评论</button>
+                </div>
+                <div class="comments-list" id="comments-5"></div>
+            </div>
+        </div>
+
+        <!-- Day 6 -->
+        <div class="day-card" id="day6">
+            <h2>Day 6: 购物天堂</h2>
+            <div class="image-grid">
+                <img src="images/day6-1.jpg" alt="心斋桥" class="trip-image">
+                <img src="images/day6-2.jpg" alt="道顿堀" class="trip-image">
+                <img src="images/day6-3.jpg" alt="购物中心" class="trip-image">
+            </div>
+            <div class="trip-content">
+                <h3>行程安排</h3>
+                <ul>
+                    <li>上午在心斋桥购物</li>
+                    <li>中午在道顿堀品尝美食</li>
+                    <li>下午游览大阪城公园</li>
+                    <li>傍晚在梅田购物中心</li>
+                    <li>晚上整理行李准备返程</li>
+                </ul>
+                <h3>实用信息</h3>
+                <p>购物区域：心斋桥、道顿堀、梅田</p>
+                <p>退税信息：满5000日元可退税</p>
+                <p>建议提前兑换现金</p>
+                <p>购物中心营业时间：10:00-21:00</p>
+            </div>
+            <div class="comments-section">
+                <h3>行程评论</h3>
+                <div class="comment-form">
+                    <textarea placeholder="写下你的评论..." id="comment-input-6"></textarea>
+                    <button onclick="addComment(6)">发表评论</button>
+                </div>
+                <div class="comments-list" id="comments-6"></div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- 返回顶部按钮 -->
+    <button id="back-to-top" title="返回顶部">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <footer>
+        <p>&copy; 2024 大阪之旅. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 
