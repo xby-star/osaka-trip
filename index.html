@@ -9,6 +9,7 @@
     <!-- Firebase SDK -->
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-analytics.js"></script>
 </head>
 <body>
     <!-- 导航栏 -->
@@ -238,18 +239,21 @@
     <!-- Firebase 配置 -->
     <script>
         const firebaseConfig = {
-            apiKey: "AIzaSyBjMkuaVuYsnobTgbDFr87FltF8PzIok6o",
-            authDomain: "osaka-trip-11265.firebaseapp.com",
-            projectId: "osaka-trip-11265",
-            storageBucket: "osaka-trip-11265.firebasestorage.app",
-            messagingSenderId: "1004976828898",
-            appId: "1:1004976828898:web:d0eeb1ca9cff5ca6e4c9bb",
-            measurementId: "G-C0GVKZJBKT"
+            apiKey: "AIzaSyChMYCUSur6rOF7VLY6uJV8rZ8h1vPXL7o",
+            authDomain: "osaka-trip-1a856.firebaseapp.com",
+            databaseURL: "https://osaka-trip-1a856-default-rtdb.asia-southeast1.firebasedatabase.app",
+            projectId: "osaka-trip-1a856",
+            storageBucket: "osaka-trip-1a856.firebasestorage.app",
+            messagingSenderId: "92378179037",
+            appId: "1:92378179037:web:0dea64434a9578eb4f8234",
+            measurementId: "G-RRXTTWZ506"
         };
         // 初始化 Firebase
         firebase.initializeApp(firebaseConfig);
         // 获取数据库引用
         const database = firebase.database();
+        // 初始化 Analytics
+        const analytics = firebase.analytics();
     </script>
     <script src="script.js"></script>
 </body>
