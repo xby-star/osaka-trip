@@ -7,8 +7,8 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <!-- Firebase SDK -->
-    <script src="https://www.gstatic.com/firebasejs/9.x.x/firebase-app-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.x.x/firebase-database-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
 </head>
 <body>
     <!-- 导航栏 -->
@@ -248,6 +248,8 @@
         };
         // 初始化 Firebase
         firebase.initializeApp(firebaseConfig);
+        // 获取数据库引用
+        const database = firebase.database();
     </script>
     <script src="script.js"></script>
 </body>

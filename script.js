@@ -60,7 +60,7 @@ function addComment(dayId) {
         };
 
         // 保存评论到Firebase
-        const commentsRef = firebase.database().ref('comments');
+        const commentsRef = database.ref('comments');
         commentsRef.push(commentData).then(() => {
             commentInput.value = '';
         }).catch(error => {
@@ -72,7 +72,7 @@ function addComment(dayId) {
 
 // 点赞功能
 function likeComment(commentId, currentLikes) {
-    const commentRef = firebase.database().ref(`comments/${commentId}`);
+    const commentRef = database.ref(`comments/${commentId}`);
     commentRef.update({
         likes: currentLikes + 1
     }).catch(error => {
@@ -84,7 +84,7 @@ function likeComment(commentId, currentLikes) {
 // 删除评论
 function deleteComment(commentId) {
     if (confirm('确定要删除这条评论吗？')) {
-        const commentRef = firebase.database().ref(`comments/${commentId}`);
+        const commentRef = database.ref(`comments/${commentId}`);
         commentRef.remove().catch(error => {
             console.error('Error deleting comment:', error);
             alert('删除失败，请稍后重试');
@@ -94,7 +94,7 @@ function deleteComment(commentId) {
 
 // 加载评论
 function loadComments() {
-    const commentsRef = firebase.database().ref('comments');
+    const commentsRef = database.ref('comments');
     commentsRef.on('value', (snapshot) => {
         const comments = snapshot.val();
         if (comments) {
