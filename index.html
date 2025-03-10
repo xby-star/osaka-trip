@@ -6,6 +6,9 @@
     <title>大阪之旅 - 六天完美行程</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.x.x/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.x.x/firebase-database-compat.js"></script>
 </head>
 <body>
     <!-- 导航栏 -->
@@ -232,6 +235,20 @@
         <p>&copy; 2024 大阪之旅. All rights reserved.</p>
     </footer>
 
+    <!-- Firebase 配置 -->
+    <script>
+        const firebaseConfig = {
+            apiKey: "AIzaSyBjMkuaVuYsnobTgbDFr87FltF8PzIok6o",
+            authDomain: "osaka-trip-11265.firebaseapp.com",
+            projectId: "osaka-trip-11265",
+            storageBucket: "osaka-trip-11265.firebasestorage.app",
+            messagingSenderId: "1004976828898",
+            appId: "1:1004976828898:web:d0eeb1ca9cff5ca6e4c9bb",
+            measurementId: "G-C0GVKZJBKT"
+        };
+        // 初始化 Firebase
+        firebase.initializeApp(firebaseConfig);
+    </script>
     <script src="script.js"></script>
 </body>
 </html> 
