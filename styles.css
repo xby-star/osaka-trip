@@ -53,21 +53,72 @@ body {
 
 /* 首页区域样式 */
 .hero {
+    position: relative;
     height: 100vh;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/osaka-bg.jpg');
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background-image: url('images/sea2.jpg');
     background-size: cover;
     background-position: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: white;
-    padding: 0 1rem;
+    background-repeat: no-repeat;
 }
 
-.hero-content h1 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
+#hero-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+    object-fit: cover;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    color: white;
+    padding: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.hero-line-1 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.hero-line-2 {
+    font-size: 28px;
+    margin-bottom: 30px;
+    color: #000;
+}
+
+.hero-line-3 {
+    font-size: 96px;
+    font-weight: bold;
+    color: #FFA500;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    letter-spacing: 8px;
+}
+
+.hero-line-4 {
+    font-size: 24px;
+    color: #fff;
+    line-height: 1.5;
+    text-decoration: underline;
+}
+
+#countdown {
+    font-weight: bold;
 }
 
 .cta-button {
@@ -247,4 +298,321 @@ footer {
     .day-card {
         padding: 1rem;
     }
+}
+
+.station-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.station-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.2);
+    border: 2px solid #FFA500;
+    color: #FFA500;
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.station-btn:hover {
+    background-color: #FFA500;
+    color: white;
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(255, 165, 0, 0.5);
+}
+
+/* 添加平滑滚动效果 */
+html {
+    scroll-behavior: smooth;
+}
+
+.food-hunter {
+    color: #FFA500 !important;
+    margin-top: 20px;
+    font-size: 1.2em;
+    border-top: 1px solid #eee;
+    padding-top: 15px;
+}
+
+#day1 {
+    background-color: #FFF8DC; /* 淡黄色背景 */
+    color: #4A3C2C; /* 深棕色文字 */
+}
+
+#day1 h2 {
+    color: #4A3C2C;
+    border-bottom: 2px solid #4A3C2C;
+}
+
+#day1 h3 {
+    color: #4A3C2C;
+}
+
+#day1 .food-hunter {
+    color: #FFA500 !important; /* 保持美食猎人标题为橙色 */
+    border-top: 1px solid #4A3C2C;
+}
+
+#day1 .comments-section {
+    border-top: 1px solid #eee;
+    color: #333; /* 评论区保持原有颜色 */
+}
+
+#day1 .comment-form textarea {
+    background-color: white;
+    border: 1px solid #ddd;
+    color: #333;
+}
+
+#day1 .comment-form button {
+    background-color: #007bff;
+    color: white;
+}
+
+#day1 .comment-form button:hover {
+    background-color: #0056b3;
+}
+
+#day1 .comment {
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+#day1 .comment-header {
+    color: #666;
+}
+
+#day2 {
+    background-color: #E6F3FF; /* 浅蓝色背景 */
+    color: #1B4B82; /* 深蓝色文字 */
+}
+
+#day2 h2 {
+    color: #1B4B82;
+    border-bottom: 2px solid #1B4B82;
+}
+
+#day2 h3 {
+    color: #1B4B82;
+}
+
+#day2 .food-hunter {
+    color: #FFA500 !important; /* 保持美食猎人标题为橙色 */
+    border-top: 1px solid #1B4B82;
+}
+
+#day2 .comments-section {
+    border-top: 1px solid #eee;
+    color: #333;
+}
+
+#day2 .comment-form textarea {
+    background-color: white;
+    border: 1px solid #ddd;
+    color: #333;
+}
+
+#day2 .comment-form button {
+    background-color: #007bff;
+    color: white;
+}
+
+#day2 .comment-form button:hover {
+    background-color: #0056b3;
+}
+
+#day2 .comment {
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+#day2 .comment-header {
+    color: #666;
+}
+
+#day3 {
+    background-color: #E6F7F7; /* 浅青色背景 */
+    color: #2C5F5F; /* 深青色文字 */
+}
+
+#day3 h2 {
+    color: #2C5F5F;
+    border-bottom: 2px solid #2C5F5F;
+}
+
+#day3 h3 {
+    color: #2C5F5F;
+}
+
+#day3 .food-hunter {
+    color: #FFA500 !important; /* 保持美食猎人标题为橙色 */
+    border-top: 1px solid #2C5F5F;
+}
+
+#day3 .comments-section {
+    border-top: 1px solid #eee;
+    color: #333;
+}
+
+#day3 .comment-form textarea {
+    background-color: white;
+    border: 1px solid #ddd;
+    color: #333;
+}
+
+#day3 .comment-form button {
+    background-color: #007bff;
+    color: white;
+}
+
+#day3 .comment-form button:hover {
+    background-color: #0056b3;
+}
+
+#day3 .comment {
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+#day3 .comment-header {
+    color: #666;
+}
+
+#day4 {
+    background-color: #FFF5E6; /* 温暖的米色背景 */
+    color: #8B2323; /* 暗红色文字，呼应京都红叶 */
+    position: relative;
+}
+
+#day4::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #8B2323, #D2691E); /* 渐变边框，象征红叶层次 */
+}
+
+#day4 h2 {
+    color: #8B2323;
+    border-bottom: 2px solid #8B2323;
+}
+
+#day4 h3 {
+    color: #8B2323;
+}
+
+#day4 .food-hunter {
+    color: #FFA500 !important;
+    border-top: 1px solid #8B2323;
+}
+
+#day5 {
+    background: linear-gradient(135deg, 
+        rgba(230, 255, 230, 0.7) 0%, /* 浅绿色背景（宇治） */
+        rgba(230, 255, 230, 0.7) 45%,
+        rgba(255, 240, 240, 0.7) 55%, /* 浅红色背景（奈良） */
+        rgba(255, 240, 240, 0.7) 100%
+    );
+    color: #006400; /* 深绿色文字 */
+    position: relative;
+}
+
+#day5 h2 {
+    background: linear-gradient(90deg, #006400, #8B0000); /* 标题渐变，从绿到红 */
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    border-bottom: 2px solid #4A766E;
+}
+
+#day5 h3 {
+    color: #4A766E; /* 青绿色，介于两种主色调之间 */
+}
+
+#day5 .food-hunter {
+    color: #FFA500 !important;
+    border-top: 1px solid #4A766E;
+}
+
+#day6 {
+    background-color: #FFF0F5; /* 浅粉色背景 */
+    color: #DB7093; /* 柔和的玫瑰红色文字 */
+    position: relative;
+}
+
+#day6::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #FFB6C1, #DB7093, #FFB6C1); /* 渐变边框，象征购物的愉悦 */
+}
+
+#day6 h2 {
+    color: #DB7093;
+    border-bottom: 2px solid #DB7093;
+}
+
+#day6 h3 {
+    color: #DB7093;
+}
+
+#day6 .food-hunter {
+    color: #FFA500 !important;
+    border-top: 1px solid #DB7093;
+}
+
+/* 保持评论区的统一样式 */
+#day4 .comments-section,
+#day5 .comments-section,
+#day6 .comments-section {
+    border-top: 1px solid #eee;
+    color: #333;
+}
+
+#day4 .comment-form textarea,
+#day5 .comment-form textarea,
+#day6 .comment-form textarea {
+    background-color: white;
+    border: 1px solid #ddd;
+    color: #333;
+}
+
+#day4 .comment-form button,
+#day5 .comment-form button,
+#day6 .comment-form button {
+    background-color: #007bff;
+    color: white;
+}
+
+#day4 .comment-form button:hover,
+#day5 .comment-form button:hover,
+#day6 .comment-form button:hover {
+    background-color: #0056b3;
+}
+
+#day4 .comment,
+#day5 .comment,
+#day6 .comment {
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+#day4 .comment-header,
+#day5 .comment-header,
+#day6 .comment-header {
+    color: #666;
 } 

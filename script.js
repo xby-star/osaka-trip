@@ -61,12 +61,15 @@ function addComment(dayId) {
 
         // 保存评论到Firebase
         const commentsRef = database.ref('comments');
-        commentsRef.push(commentData).then(() => {
-            commentInput.value = '';
-        }).catch(error => {
-            console.error('Error saving comment:', error);
-            alert('评论保存失败，请稍后重试');
-        });
+        commentsRef.push(commentData)
+            .then(() => {
+                console.log('评论保存成功');
+                commentInput.value = '';
+            })
+            .catch(error => {
+                console.error('保存评论时出错:', error);
+                alert('评论保存失败: ' + error.message);
+            });
     }
 }
 
@@ -75,9 +78,13 @@ function likeComment(commentId, currentLikes) {
     const commentRef = database.ref(`comments/${commentId}`);
     commentRef.update({
         likes: currentLikes + 1
-    }).catch(error => {
-        console.error('Error updating likes:', error);
-        alert('点赞失败，请稍后重试');
+    })
+    .then(() => {
+        console.log('点赞成功');
+    })
+    .catch(error => {
+        console.error('点赞失败:', error);
+        alert('点赞失败: ' + error.message);
     });
 }
 
@@ -85,55 +92,73 @@ function likeComment(commentId, currentLikes) {
 function deleteComment(commentId) {
     if (confirm('确定要删除这条评论吗？')) {
         const commentRef = database.ref(`comments/${commentId}`);
-        commentRef.remove().catch(error => {
-            console.error('Error deleting comment:', error);
-            alert('删除失败，请稍后重试');
+        commentRef.remove()
+        .then(() => {
+            console.log('评论删除成功');
+        })
+        .catch(error => {
+            console.error('删除评论失败:', error);
+            alert('删除失败: ' + error.message);
         });
     }
 }
 
 // 加载评论
 function loadComments() {
+    console.log('开始加载评论...');
     const commentsRef = database.ref('comments');
-    commentsRef.on('value', (snapshot) => {
-        const comments = snapshot.val();
-        if (comments) {
-            // 清空所有评论列表
-            document.querySelectorAll('.comments-list').forEach(list => {
-                list.innerHTML = '';
-            });
+    
+    commentsRef.on('value', 
+        (snapshot) => {
+            console.log('收到评论数据:', snapshot.val());
+            const comments = snapshot.val();
+            if (comments) {
+                // 清空所有评论列表
+                document.querySelectorAll('.comments-list').forEach(list => {
+                    list.innerHTML = '';
+                });
 
-            // 按日期排序评论
-            const sortedComments = Object.entries(comments)
-                .map(([id, comment]) => ({ id, ...comment }))
-                .sort((a, b) => new Date(b.date) - new Date(a.date));
+                // 按日期排序评论
+                const sortedComments = Object.entries(comments)
+                    .map(([id, comment]) => ({ id, ...comment }))
+                    .sort((a, b) => new Date(b.date) - new Date(a.date));
 
-            // 显示评论
-            sortedComments.forEach(comment => {
-                const commentsList = document.getElementById(`comments-${comment.dayId}`);
-                if (commentsList) {
-                    const commentElement = document.createElement('div');
-                    commentElement.className = 'comment';
-                    commentElement.innerHTML = `
-                        <div class="comment-header">
-                            <span>${comment.author}</span>
-                            <span>${comment.date}</span>
-                        </div>
-                        <div class="comment-content">${comment.content}</div>
-                        <div class="comment-actions">
-                            <button onclick="likeComment('${comment.id}', ${comment.likes})">👍 ${comment.likes}</button>
-                            <button onclick="deleteComment('${comment.id}')">🗑️ 删除</button>
-                        </div>
-                    `;
-                    commentsList.appendChild(commentElement);
-                }
-            });
+                // 显示评论
+                sortedComments.forEach(comment => {
+                    const commentsList = document.getElementById(`comments-${comment.dayId}`);
+                    if (commentsList) {
+                        const commentElement = document.createElement('div');
+                        commentElement.className = 'comment';
+                        commentElement.innerHTML = `
+                            <div class="comment-header">
+                                <span>${comment.author}</span>
+                                <span>${comment.date}</span>
+                            </div>
+                            <div class="comment-content">${comment.content}</div>
+                            <div class="comment-actions">
+                                <button onclick="likeComment('${comment.id}', ${comment.likes})">👍 ${comment.likes}</button>
+                                <button onclick="deleteComment('${comment.id}')">🗑️ 删除</button>
+                            </div>
+                        `;
+                        commentsList.appendChild(commentElement);
+                    }
+                });
+            } else {
+                console.log('没有评论数据');
+            }
+        },
+        (error) => {
+            console.error('加载评论失败:', error);
+            alert('加载评论失败: ' + error.message);
         }
-    });
+    );
 }
 
 // 页面加载时加载评论
-document.addEventListener('DOMContentLoaded', loadComments);
+document.addEventListener('DOMContentLoaded', () => {
+    console.log('页面加载完成，初始化评论系统...');
+    loadComments();
+});
 
 // 添加平滑滚动
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
